@@ -10,8 +10,8 @@ echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdi
 
 ## BUILD IMAGE
 echo 'Building docker image'
-docker build --build-arg VCS_REF=$(git rev-parse --short HEAD) \
-             --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+docker build --build-arg VCS_REF=`git rev-parse --short HEAD` \
+             --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
              -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
 
 ## TAG IMAGE
