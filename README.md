@@ -5,7 +5,7 @@
 [![size](https://img.shields.io/docker/image-size/sergiomartins8/jenkins-slave-base)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
 [![stars](https://img.shields.io/docker/stars/sergiomartins8/jenkins-slave-base.svg?style=flat)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
 [![pulls](https://img.shields.io/docker/pulls/sergiomartins8/jenkins-slave-base.svg)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
-
+[![license](https://img.shields.io/github/license/sergiomartins8/jenkins-slave-base)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ## About
 
