@@ -1,5 +1,10 @@
 # jenkins-slave-base
 
+![](docs/logo.png)
+
+A jenkins-slave customized docker image 🐳
+
+
 [![version](https://img.shields.io/docker/v/sergiomartins8/jenkins-slave-base?sort=semver)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
 [![release](https://github.com/sergiomartins8/jenkins-slave-base/workflows/release/badge.svg)](https://github.com/sergiomartins8/jenkins-slave-base/actions?query=workflow%3Arelease)
 [![size](https://img.shields.io/docker/image-size/sergiomartins8/jenkins-slave-base)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
