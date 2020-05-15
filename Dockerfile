@@ -1,15 +1,5 @@
 FROM docker:18.06.3-ce
 
-ARG VCS_REF
-ARG BUILD_DATE
-
-# Metadata
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.name="jenkins-slave-base" \
-      org.label-schema.url="https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/" \
-      org.label-schema.vcs-url="https://github.com/sergiomartins8/jenkins-slave-base" \
-      org.label-schema.build-date=$BUILD_DATE
-
 ENV JAVA_VERSION="8.242.08-r0"
 ENV NODE_VERSION="10.14.2-r0"
 # Note: Latest version of kubectl may be found at:
