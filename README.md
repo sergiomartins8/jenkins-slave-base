@@ -1,10 +1,10 @@
 # jenkins-slave-base
 
-[![version](https://images.microbadger.com/badges/version/sergiomartins8/jenkins-slave-base.svg)](https://microbadger.com/images/sergiomartins8/jenkins-slave-base)
+[![version](https://img.shields.io/docker/v/sergiomartins8/jenkins-slave-base?sort=semver)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
 [![release](https://github.com/sergiomartins8/jenkins-slave-base/workflows/release/badge.svg)](https://github.com/sergiomartins8/jenkins-slave-base/actions?query=workflow%3Arelease)
-[![layers](https://images.microbadger.com/badges/image/sergiomartins8/jenkins-slave-base.svg)](https://microbadger.com/images/sergiomartins8/jenkins-slave-base)
-[![docker stars](https://img.shields.io/docker/stars/sergiomartins8/jenkins-slave-base.svg?style=flat)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
-[![docker pulls](https://img.shields.io/docker/pulls/sergiomartins8/jenkins-slave-base.svg)]()
+[![size](https://img.shields.io/docker/image-size/sergiomartins8/jenkins-slave-base)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
+[![stars](https://img.shields.io/docker/stars/sergiomartins8/jenkins-slave-base.svg?style=flat)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
+[![pulls](https://img.shields.io/docker/pulls/sergiomartins8/jenkins-slave-base.svg)](https://hub.docker.com/r/sergiomartins8/jenkins-slave-base/)
 
 
 ## About
