@@ -14,7 +14,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/main' > /etc/apk/repositorie
     && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories \
     && apk upgrade -U -a
 
-# Install Java, Maven, Node, Curl, Git, Python
+# Install Java8, Maven, Node, Curl, Git, Python3, Pip3, Kubectl, Helm
 RUN { \
         echo '#!/bin/sh'; \
         echo 'set -e'; \
@@ -33,17 +33,15 @@ RUN set -x \
         nodejs="${NODE_VERSION}" \
         yarn \
         git \
-        python \
-        py-pip \
-    && [ "${JAVA_HOME}" = "$(docker-java-home)" ]
-
-# Install Kubectl
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
+        python3 \
+    && pip3 install --no-cache-dir --upgrade pip \
+    && [ "${JAVA_HOME}" = "$(docker-java-home)" ] \
+    && rm -rf /var/cache/* \
+    && rm -rf /root/.cache/* \
+    && curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
     && chmod +x ./kubectl \
-    && mv ./kubectl /usr/local/bin/kubectl
-
-# Install helm
-RUN wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
+    && mv ./kubectl /usr/local/bin/kubectl \
+    && wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm
 
 ENTRYPOINT ["/bin/sh"]
