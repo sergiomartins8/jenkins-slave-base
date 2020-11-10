@@ -1,20 +1,20 @@
 FROM docker:18.06.3-ce
 
-ENV JAVA_VERSION="8.242.08-r0"
-ENV NODE_VERSION="10.14.2-r0"
+ENV JAVA_VERSION="8.252.09-r0"
+ENV NODE_VERSION="10.19.0-r0"
 # Note: Latest version of kubectl may be found at:
 # https://github.com/kubernetes/kubernetes/releases
-ENV KUBECTL_VERSION="v1.18.2"
+ENV KUBECTL_VERSION="v1.18.10"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v3.2.1"
+ENV HELM_VERSION="v3.4.0"
 
 # Update packages
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/main' > /etc/apk/repositories \
     && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories \
     && apk upgrade -U -a
 
-# Install Java8, Maven, Node, Curl, Git, Python3, Pip3, Kubectl, Helm
+# Install Java8, Maven, Node, Npm, Curl, Git, Python3, Pip3, Kubectl, Helm
 RUN { \
         echo '#!/bin/sh'; \
         echo 'set -e'; \
@@ -31,6 +31,7 @@ RUN set -x \
         maven \
         curl \
         nodejs="${NODE_VERSION}" \
+        npm \
         yarn \
         git \
         python3 \
