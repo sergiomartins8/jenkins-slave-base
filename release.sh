@@ -2,7 +2,7 @@
 set -eo pipefail
 
 DOCKER_IMAGE=sergiomartins8/jenkins-slave-base
-DOCKER_TAG=1.2
+DOCKER_TAG=1.3
 
 ## LOGIN
 echo 'Logging into docker hub'

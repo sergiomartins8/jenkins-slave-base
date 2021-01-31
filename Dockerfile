@@ -1,6 +1,6 @@
 FROM docker:18.06.3-ce
 
-ENV JAVA_VERSION="8.252.09-r0"
+ENV JAVA_VERSION="11.0.9_p11-r1"
 ENV NODE_VERSION="10.19.0-r0"
 # Note: Latest version of kubectl may be found at:
 # https://github.com/kubernetes/kubernetes/releases
@@ -14,7 +14,6 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/main' > /etc/apk/repositorie
     && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories \
     && apk upgrade -U -a
 
-# Install Java8, Maven, Node, Npm, Curl, Git, Python3, Pip3, Kubectl, Helm
 RUN { \
         echo '#!/bin/sh'; \
         echo 'set -e'; \
@@ -22,12 +21,12 @@ RUN { \
         echo 'dirname "$(dirname "$(readlink -f "$(which javac || which java)")")"'; \
     } > /usr/local/bin/docker-java-home \
     && chmod +x /usr/local/bin/docker-java-home
-ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
-ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk
+ENV PATH $PATH:/usr/lib/jvm/java-11-openjdk/jre/bin:/usr/lib/jvm/java-11-openjdk/bin
 RUN set -x \
     && apk update \
     && apk add --no-cache \
-        openjdk8="${JAVA_VERSION}" \
+        openjdk11="${JAVA_VERSION}" \
         maven \
         curl \
         nodejs="${NODE_VERSION}" \
@@ -35,6 +34,7 @@ RUN set -x \
         yarn \
         git \
         python3 \
+        --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     && pip3 install --no-cache-dir --upgrade pip \
     && [ "${JAVA_HOME}" = "$(docker-java-home)" ] \
     && rm -rf /var/cache/* \
